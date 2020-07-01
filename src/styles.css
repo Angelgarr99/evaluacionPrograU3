@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+}
+
+.txt_color {
+    color: white;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.txt-tachado {
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+.main-conteiner {
+    margin-top: 20px;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}

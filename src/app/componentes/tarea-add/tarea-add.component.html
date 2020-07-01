@@ -1,0 +1,8 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <div class="input-group-text bg-secondary">
+            <input type="checkbox" (click)='cheked(tarea.index)' [ngClass]="{'disabled': tarea.realizada}" aria-label="Checkbox for following input">
+        </div>
+    </div>
+    <span class="form-control text-body" [ngClass]="{'txt-tachado': tarea.realizada}"> <b>{{tarea.index}}.-</b> {{ tarea.nombre }} </span>
+</div>

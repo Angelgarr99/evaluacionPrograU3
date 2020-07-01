@@ -1,0 +1,36 @@
+<div class="mb-3">
+    <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="validatedInputGroupPrepend">Título</span>
+        </div>
+        <input id="text" type="text" class="form-control" #titulo required autofocus>
+    </div>
+    <br>
+    <div class="input-group is-invalid">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="validatedInputGroupPrepend">Descripción</span>
+        </div>
+        <textarea id="text2" type="text" class="form-control" #descri required></textarea>
+    </div>
+    <br>
+    <div class="mb-3">
+        <div class="input-group is-invalid">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="validatedInputGroupSelect">Importancia</label>
+            </div>
+            <select class="custom-select" id="validatedInputGroupSelect" #impo required>
+            <option value="null">Seleccione una opción</option>
+            <option value="bg-success">No importante</option>
+            <option value="bg-warning">Importante</option>
+            <option value="bg-danger">Muy importante</option>
+          </select>
+        </div>
+    </div>
+    <div class="input-group-append">
+        <button class="btn btn-outline-primary" (click)='agregarNota(titulo.value, descri.value, impo.value)' type="button">Agregar</button>
+    </div>
+
+</div>
+<div class="card-columns">
+    <app-nota-add [nota]="item " *ngFor="let item of nota"></app-nota-add>
+</div>
