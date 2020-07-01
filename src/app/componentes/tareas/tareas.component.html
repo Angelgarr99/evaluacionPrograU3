@@ -1,23 +1,25 @@
-<div class="input-group">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Tarea: </span>
+<div class="animated fadeIn ">
+    <div class="input-group ">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Tarea: </span>
+        </div>
+        <input type="text" class="form-control" id="text" (keyup.enter)='agregarTarea(tareaNueva.value)' #tareaNueva placeholder="Integre tarea" app-restrict-input="words" name="texto" autofocus>
+        <div class="input-group-append">
+            <button class="btn btn-outline-primary" (click)='agregarTarea(tareaNueva.value)' type="button">Agregar</button>
+        </div>
     </div>
-    <input type="text" class="form-control" id="text" (keyup.enter)='agregarTarea(tareaNueva.value)' #tareaNueva placeholder="Integre tarea" app-restrict-input="words" name="texto" autofocus>
-    <div class="input-group-append">
-        <button class="btn btn-outline-primary" (click)='agregarTarea(tareaNueva.value)' type="button">Agregar</button>
+    <div class="invalid-feedback">
+        Ingrese un texto valido.
     </div>
+    <br>
+    <div class="input-group-append" *ngIf="tarea.length > 0">
+        <div class="btn-group mr-2">
+            <button class="btn btn-outline-danger" (click)='borrar()'> Eliminar Todo</button>
+        </div>
+        <div>
+            <button class=" btn btn-outline-warning" *ngIf="hayActivos()" (click)='borrarCompletados()'> Eliminar tareas completadas</button>
+        </div>
+    </div>
+    <br>
 </div>
-<div class="invalid-feedback">
-    Ingrese un texto valido.
-</div>
-<br>
-<div class="input-group-append" *ngIf="tarea.length > 0">
-    <div class="btn-group mr-2">
-        <button class="btn btn-outline-danger" (click)='borrar()'> Eliminar Todo</button>
-    </div>
-    <div>
-        <button class=" btn btn-outline-warning" *ngIf="hayActivos()" (click)='borrarCompletados()'> Eliminar tareas completadas</button>
-    </div>
-</div>
-<br>
-<app-tarea-add (tareaSeleccionada)="cheked($event) " [tarea]="item " *ngFor="let item of tarea "></app-tarea-add>
+<app-tarea-add class="animated fadeIn fast" (tareaSeleccionada)="cheked($event) " [tarea]="item " *ngFor="let item of tarea "></app-tarea-add>
