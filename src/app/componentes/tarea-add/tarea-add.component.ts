@@ -1,22 +1,24 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Tarea } from '../../models/tarea.model';
+import { TareasService } from '../../services/tareas.service';
+
 
 @Component({
   selector: 'app-tarea-add',
   templateUrl: './tarea-add.component.html'
 })
 export class TareaAddComponent implements OnInit {
-  @Input() tarea: any = {};
-  @Output() tareaSeleccionada: EventEmitter<number>;
-  constructor() {
+  tarea: Tarea[];
+  @Output() tareaSeleccionada: EventEmitter<Tarea>;
+  constructor(public tareasService: TareasService) {
     this.tareaSeleccionada = new EventEmitter();
   }
 
   ngOnInit(): void {
+
   }
-  cheked(index: number){
-    // this.router.navigate( ['/heroe', this.index] );
-    // console.log(this.index);
-     this.tareaSeleccionada.emit(index);
+  cheked(tarea: Tarea){
+    this.tareaSeleccionada.emit(tarea);
   }
 
 

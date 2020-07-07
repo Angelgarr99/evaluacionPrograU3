@@ -3,7 +3,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="validatedInputGroupPrepend">Título</span>
         </div>
-        <input id="text" type="text" class="form-control" #titulo required autofocus>
+        <input id="text" type="text" class="form-control" #titulo>
     </div>
     <br>
     <div class="input-group is-invalid">
@@ -32,5 +32,5 @@
 
 </div>
 <div class="card-columns">
-    <app-nota-add class="animated fadeIn fast" [nota]="item " *ngFor="let item of nota"></app-nota-add>
+    <app-nota-add class="animated fadeIn fast"></app-nota-add>
 </div>
