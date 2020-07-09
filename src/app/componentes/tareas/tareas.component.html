@@ -3,7 +3,7 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Tarea: </span>
         </div>
-        <input type="text" class="form-control" id="text" (keyup.enter)='agregarTarea(tareaNueva.value)' #tareaNueva placeholder="Integre tarea" app-restrict-input="words" name="texto" autofocus>
+        <input type="text" [(ngModel)]="nombreTarea" class="form-control" id="text" (keyup.enter)='agregarTarea(tareaNueva.value)' #tareaNueva placeholder="Integre tarea" app-restrict-input="words" name="texto" autofocus>
         <div class="input-group-append">
             <button class="btn btn-outline-primary" (click)='agregarTarea(tareaNueva.value)' type="button">Agregar</button>
         </div>

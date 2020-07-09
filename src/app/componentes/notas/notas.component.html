@@ -3,14 +3,14 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="validatedInputGroupPrepend">Título</span>
         </div>
-        <input id="text" type="text" class="form-control" #titulo>
+        <input id="text" [(ngModel)]="tit" type="text" class="form-control" #titulo>
     </div>
     <br>
     <div class="input-group is-invalid">
         <div class="input-group-prepend">
             <span class="input-group-text" id="validatedInputGroupPrepend">Descripción</span>
         </div>
-        <textarea id="text2" type="text" class="form-control" #descri required></textarea>
+        <textarea id="text2" [(ngModel)]="des" type="text" class="form-control" #descri required></textarea>
     </div>
     <br>
     <div class="mb-3">
@@ -18,7 +18,7 @@
             <div class="input-group-prepend">
                 <label class="input-group-text" for="validatedInputGroupSelect">Importancia</label>
             </div>
-            <select class="custom-select" id="validatedInputGroupSelect" #impo required>
+            <select class="custom-select" [(ngModel)]='opti' id="validatedInputGroupSelect" #impo required>
             <option value="null">Seleccione una opción</option>
             <option value="bg-success">No importante</option>
             <option value="bg-warning">Importante</option>

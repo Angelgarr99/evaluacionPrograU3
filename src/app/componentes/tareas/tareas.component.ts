@@ -5,7 +5,10 @@ import { TareasService } from '../../services/tareas.service';
   selector: 'app-tareas',
   templateUrl: './tareas.component.html'
 })
+
 export class TareasComponent {
+
+  nombreTarea= "";
   tarea: Tarea;
    validar = true;
   constructor( public tareasService: TareasService) { }
@@ -14,9 +17,7 @@ export class TareasComponent {
   }
   agregarTarea( termino: string ){
     this.tareasService.agregarTarea(termino) ;
-    (document.getElementById('text') as HTMLInputElement).autofocus = true;
-    (document.getElementById('text') as HTMLInputElement).value = "";
-    console.log('Aqui llega');
+    this.nombreTarea= "";
   }
   cheked(tarea: Tarea){
       this.tareasService.cheked(tarea);
